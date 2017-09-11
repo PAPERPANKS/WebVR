@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>VR-Keyboard</title>
+	<meta name="description" content="Hello, WebVR! - A-Frame">
+	<script src="js/aframe.min.js"></script>
+	<script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
+</head>
+<body>
+	<a-scene>
+		<a-box id="anim-box" color="#1DE9B6" position="-5 2 -5" rotation="0 45 45" scale=".5 .5 .5" transparent="true" opacity="0.7">
+			<a-animation attribute="position" to="5 2 -5" direction="alternate" dur="10000" repeat="indefinite"></a-animation>
+		</a-box>
+
+		<!--keys-->
+		<a-box color="#fff" position="-3 2 -5" rotation="0 90 45" scale="2 0.25 0.5">
+			<a-animation attribute="rotation" to="0 90 405" delay="500" direction="" repeat="indefinite" dur="1000"></a-animation>            
+		</a-box>
+		<a-box color="#000" position="-2 2 -5" rotation="0 90 40" scale="2 0.25 0.5">
+			<a-animation attribute="rotation" to="0 90 400" delay="1000" direction="" repeat="indefinite" dur="1000"></a-animation>            
+		</a-box>
+		<a-box color="#fff" position="-1 2 -5" rotation="0 90 35" scale="2 0.25 0.5">
+			<a-animation attribute="rotation" to="0 90 395" delay="1500" direction="" repeat="indefinite" dur="1000"></a-animation>            
+		</a-box>
+		<a-box color="#000" position="0 2 -5" rotation="0 90 30" scale="2 0.25 0.5">
+			<a-animation attribute="rotation" to="0 90 390" delay="2000" direction="" repeat="indefinite"  dur="1000"></a-animation>                      
+		</a-box>
+		<a-box color="#fff" position="1 2 -5" rotation="0 90 25" scale="2 0.25 0.5">
+			<a-animation attribute="rotation" to="0 90 385" delay="2500" direction="" repeat="indefinite" dur="1000"></a-animation>               
+		</a-box>
+		<a-box color="#000" position="2 2 -5" rotation="0 90 20" scale="2 0.25 0.5">
+			<a-animation attribute="rotation" to="0 90 380" delay="3000" direction="" repeat="indefinite" dur="1000"></a-animation>                      
+		</a-box>
+		<a-box color="#fff" position="3 2 -5" rotation="0 90 15" scale="2 0.25 0.5">
+			<a-animation attribute="rotation" to="0 90 375" delay="3500" direction="" repeat="indefinite" dur="1000"></a-animation>                        
+		</a-box>	
+
+		<!-- Out of the box environment! -->
+		<a-entity environment="preset: threetowers; lighting: distant; lightPosition: 0 1 -0.2"></a-entity>      
+	</a-scene>
+ 
+</body>
+</html>
