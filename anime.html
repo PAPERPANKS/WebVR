@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+	<title>anime</title>
+	<meta name="description" content="Hello, WebVR! - A-Frame">
+	<script src="js/aframe.min.js"></script>
+</head>
+<body>
+	<a-scene>
+		<a-assets>
+			<a-asset-item id="deer" src="assets/deer.dae"></a-asset-item>
+		</a-assets>
+
+		<a-entity collada-model="#deer" scale="0.15 0.15 0.15" position="-1 0 -3" rotation="0 -30 0">         
+		</a-entity>	
+
+		<a-box id="cube" color="#EF2D5E" position="0 1 -4" 
+		event-set__enter="_event: mouseenter; _target: #goatText; visible: true"
+		event-set__leave="_event: mouseleave; _target: #goatText; visible: false">
+		</a-box>
+
+		<a-text id="goatText" value="GOAT" letter-spacing="3" position="-0.7 2.1 -5" width="15" visible="false"></a-text>
+
+		<a-sky color="red"></a-sky>
+
+		<a-camera><a-cursor></a-cursor></a-camera>
+	</a-scene>
+</body>
+</html>
