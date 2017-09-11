@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+    <title>VR-forest</title>
+    <meta name="description" content="Hello, WebVR! - A-Frame">
+    <script src="js/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
+</head>
+<body>
+    <a-scene>
+        <a-assets>
+            <a-asset-item id="deer" src="assets/deer.dae"></a-asset-item>
+            <a-asset-item id="wolf" src="assets/wolf.dae"></a-asset-item>
+            <a-asset-item id="goat" src="assets/goat.dae"></a-asset-item>
+            <a-asset-item id="tree" src="assets/Tree low.obj"></a-asset-item>      
+        </a-assets>
+
+        <a-obj-model src="#tree" scale="0.03 0.03 0.03" position="1.5 0 -3" color="green"></a-obj-model>
+
+        <a-entity collada-model="#deer" scale="0.15 0.15 0.15" position="-1 0 -3" rotation="0 -30 0">         
+        </a-entity>
+
+        <a-entity collada-model="#goat" scale="0.30 0.30 0.30" position="0 0 -6" rotation="0 -80 0"
+            event-set__enter="_event: mouseenter; _target: #goatText; visible: true"
+            event-set__leave="_event: mouseleave; _target: #goatText; visible: false">           
+        </a-entity>  
+
+        <a-entity collada-model="#wolf" scale="0.30 0.30 0.30" position="4 0 -4" rotation="0 200 0"
+            event-set__enter="_event: mouseenter; _target: #wolfText; visible: true"
+            event-set__leave="_event: mouseleave; _target: #wolfText; visible: false">            
+        </a-entity>
+        
+        <a-text id="goatText" value="GOAT" letter-spacing="3" position="-0.7 2.1 -5" width="15" visible="true"></a-text>
+        
+        <a-entity environment="preset: forest; lighting: distant; lightPosition: 0 1 -0.2; dressing: trees; dressingAmount: 1000; groundYScale: 8"></a-entity>              
+        
+        <a-camera>
+            <a-cursor></a-cursor>
+        </a-camera>
+    </a-scene>
+</body>
+</html>
