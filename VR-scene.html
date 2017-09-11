@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>VR-scenes</title>
+	<meta name="description" content="Hello, WebVR! - A-Frame">
+	<script src="js/aframe.min.js"></script>
+	<script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>	
+	<script src="https://unpkg.com/aframe-event-set-component@3.0.3/dist/aframe-event-set-component.min.js"></script>
+</head>
+<body>
+	<a-scene>
+
+		<a-box position="-5 1 -5" rotation="0 90 30" scale="0.75 0.75 0.75" color="#FFC65D"
+					event-set__enter="_event: mouseenter; _target:#env; environment.preset: arches"
+					event-set__leave="_event: mouseleave; _target:#env; environment.preset: default">
+		</a-box>
+		<a-box position="-3 3 -5" rotation="10 90 30" scale="0.75 0.75 0.75" color="#FFC65D"
+					event-set__enter="_event: mouseenter; _target:#env; environment.preset: dream"
+					event-set__leave="_event: mouseleave; _target:#env; environment.preset: default">
+		</a-box>
+		<a-box position="-1 2 -5" rotation="0 45 45" scale="0.75 0.75 0.75" color="#FFC65D"
+					event-set__enter="_event: mouseenter; _target:#env; environment.preset: threetowers"
+					event-set__leave="_event: mouseleave; _target:#env; environment.preset: default">
+		</a-box>
+		<a-box position="2 2 -4" rotation="0 45 30" scale="0.75 0.75 0.75" color="#FFC65D"
+					event-set__enter="_event: mouseenter; _target:#env; environment.preset: forest"
+					event-set__leave="_event: mouseleave; _target:#env; environment.preset: default">
+			<a-animation attribute="rotation" to="0 405 30" delay="" direction="alternate" repeat="indefinite" dur="1000"></a-animation>            
+		</a-box>
+		<a-box position="1 1 -5" rotation="0 70 30" scale="0.9 0.9 0.9" color="#FFC65D"
+					event-set__enter="_event: mouseenter; _target:#env; environment.preset: contact"
+					event-set__leave="_event: mouseleave; _target:#env; environment.preset: default">
+		</a-box>  
+
+		<a-entity id="env" environment="preset: default; lighting: distant; skyType: gradient; skyColor: blue"></a-entity>  
+
+		<a-camera>
+			<a-cursor></a-cursor>
+		</a-camera>
+
+	</a-scene>
+</body>
+</html>
+
